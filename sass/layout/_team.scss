@@ -1,0 +1,101 @@
+.team {
+    background-color: #F5F4FA;
+
+    &-container {
+        padding-top: 94px;
+        padding-bottom: 94px;
+    }
+
+    &__list {
+        padding-top: 50px;
+        display: flex;
+        column-gap: 30px;
+    }
+
+    &__item-frame {
+        background: #FFFFFF;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 0px 0px 4px 4px;
+    }
+
+    &__item-caption {
+        display: flex;
+        flex-direction: column;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    &__name {
+        @include font(16px, 500, 1.18);
+        text-align: center;
+        letter-spacing: 0.03em;
+    }
+
+    &__profession {
+        @include font(16px, 400, 1.18);
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: var(--grey-text-color);
+        margin-top: 10px;
+    }
+
+    &__social-links {
+        display: flex;
+        justify-content: center;
+        column-gap: 10px;
+        margin-top: 16px;
+    }
+
+    &__social-links-item {
+        width: 44px;
+        height: 44px;
+        @extend %align;
+        border-radius: 50%;
+        transition: background-color var(--dur-and-func);
+
+        &:hover,
+        &:focus {
+            background-color: var(--brand-color);
+        }
+    }
+
+    &__social-links-icon {
+        fill: #AFB1B8;
+        transition: fill var(--dur-and-func);
+
+        .team__social-links-item:hover &,
+        .team__social-links-item:focus & {
+            fill: var(--white-color);
+        }
+    }
+}
+
+@media screen and (min-width: 320px) {
+    .team-container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .team__list{
+        flex-direction: column;
+        row-gap: 30px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .team__list {
+        flex-direction: row;
+        row-gap: 30px;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .team__list {
+            flex-wrap: nowrap;
+        }
+                .team-container {
+                    padding-top: 94px;
+                    padding-bottom: 94px;
+                }
+}

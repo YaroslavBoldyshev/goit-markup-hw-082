@@ -1,0 +1,142 @@
+.modal-form {
+    display: flex;
+    flex-direction: column;
+
+    &-caption {
+        width: 100%;
+        // height: 23px;
+        @include font(20px, 700, 1.15);
+        text-align: center;
+        letter-spacing: 0.03em;
+        margin-bottom: 12px;
+    }
+
+    &-field {
+        position: relative;
+        display: block;
+
+        &-name {
+            display: block;
+            padding-bottom: 4px;
+            @include font(12px, 400, 1.16);
+            letter-spacing: 0.01em;
+            color: #757575;
+        }
+    }
+
+    &-field-icon {
+        display: block;
+        position: absolute;
+        top: 11px;
+        left: 12px;
+        transition: fill var(--dur-and-func);
+
+        .modal-form-input:focus+& {
+            fill: var(--brand-color);
+        }
+    }
+
+    &-input {
+        width: 100%;
+        height: 40px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        border-radius: 4px;
+        padding-left: 42px;
+        margin-bottom: 10px;
+        transition: border-color var(--dur-and-func);
+
+        &:focus {
+            outline: none;
+            border-color: var(--brand-color);
+        }
+    }
+
+    &-message {
+        width: 100%;
+        height: 120px;
+        resize: none;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        border-radius: 4px;
+        display: block;
+        padding: 12px 16px;
+        @include font(12px, 400, 1.16);
+        transition: border-color var(--dur-and-func);
+
+        &:focus {
+            outline: none;
+            border-color: var(--brand-color);
+        }
+    }
+
+    &-check-wrapper {
+        @extend %align;
+        margin-top: 20px;
+    }
+
+    &-own-check {
+        border: 2px solid #212121;
+        border-radius: 2px;
+        transition: background-color var(--dur-and-func),
+            border-color var(--dur-and-func);
+        margin-right: 8px;
+        fill: #FFFFFF;
+
+        .modal-form-check:checked+& {
+            background-color: var(--brand-color);
+            border-color: var(--brand-color);
+        }
+    }
+
+    &-btn {
+        width: 200px;
+        height: 50px;
+        background: var(--brand-color);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+        cursor: pointer;
+        color: #FFFFFF;
+        @include font(16px, 700, 1.87);
+        letter-spacing: 0.06em;
+        transition: background-color var(--dur-and-func);
+
+        &:focus {
+            background-color: #188CE8;
+        }
+    }
+}
+
+.modal-agreement {
+    @include font(12px, 400, 1.169);
+    letter-spacing: 0.03em;
+    color: #757575;
+}
+
+.contract-terms {
+    color: var(--brand-color);
+}
+@media screen and (min-width: 480px) {
+    .modal-form-massage{
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+
+}
+
+
+@media screen and (min-width: 1200px) {
+
+    .modal-form-massage {
+            font-size: 12px;
+            line-height: 14px;
+        }
+    .modal-agreement {
+            font-size: 14px;
+            line-height: 24px;
+        }
+        
+}

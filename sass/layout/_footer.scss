@@ -1,0 +1,180 @@
+.footer {
+    background-color: var(--dark-bg);
+
+    &-container {
+            padding-top: 60px;
+            padding-bottom: 60px;
+            display: flex;
+        }
+
+    &__logo {
+        font-family: Raleway;
+        @include font(24px, 700, 1.19);
+        text-decoration: none;
+        color: var(--white-color);
+        letter-spacing: 0.03em;
+    }
+
+    &__contacts-list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 9px;
+        margin-top: 20px;
+    }
+
+    &__contacts-link {
+        color: var(--white-color);
+        text-decoration: none;
+        @include font(14px, 400, 1.71);
+        letter-spacing: 0.03em;
+        font-style: normal;
+        transition: color var(--dur-and-func);
+            &:hover,
+            &:focus {
+                color: var(--brand-color);
+            }
+    }
+
+    &__social-links {
+        display: flex;
+        flex-direction: column;
+        // margin-left: 70px;
+        margin-top: 12px;
+
+        &-list {
+            display: flex;
+            justify-content: center;
+            column-gap: 10px;
+            margin-top: 20px;
+        }
+        &-list-icon {
+            fill: var(--white-color)
+        }
+    }
+
+    &__social-links-list-item {
+        width: 44px;
+        height: 44px;
+        @extend %align;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: background-color var(--dur-and-func);
+            &:hover,
+            &:focus {
+                background-color: var(--brand-color);
+            }
+    }   
+        
+    &__headline {
+        @include font(14px, 700, 1.14);
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+
+    &__subscribe-box {
+        // margin-left: 93px;
+        margin-top: 60px;
+        // width: 100%;
+    }
+
+    &__subscribe-form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 20px;
+        column-gap: 12px;
+        margin-top: 20px;
+    }
+
+    &__subscribe-input {
+        width: 358px;
+        height: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+        border-radius: 4px;
+        background: transparent;
+        padding-left: 16px;
+    }
+
+    &__submit-btn {
+        width: 200px;
+        height: 50px;
+        background: var(--brand-color);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        @include font(16px, 700, 1.88);
+        color: #FFFFFF;
+        letter-spacing: 0.06em;
+        border: none;
+        @extend %align;
+    }
+
+    &__send-icon {
+        margin-left: 10px;
+    }
+}
+@media screen and (min-width: 320px) {
+    .footer-container{
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer__social-links{
+        flex-direction: column;
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .footer__subscribe-input {
+        width: 450px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .footer-container {
+            flex-direction: row;
+            justify-content: center;
+            column-gap: 165px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .footer__social-links {
+                    flex-direction: column;
+                    text-align: center;
+                    margin-top: 0;
+        }
+}
+
+@media screen and (min-width: 1200px) {
+    .footer__subscribe-form{
+        flex-direction: row;
+    }
+        .footer-container {
+            // flex-direction: row;
+            text-align: left;
+            column-gap: 0;
+        }
+    
+        .footer__social-links {
+            flex-direction: column;
+            text-align: left;
+            margin-left: 70px;
+            margin-right: 93px;
+
+        }
+    
+        .footer__subscribe-input {
+            width: 358px;
+        }
+        .footer__subscribe-box{
+            margin-top: 0;
+        }
+        .footer__logo{
+            font-size: 26px;
+            line-height: 31px;
+        }
+}
+
+
+

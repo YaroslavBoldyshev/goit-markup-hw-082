@@ -1,0 +1,5 @@
+.subtitle {
+    @include font(36px, 700, 1.66);
+    text-align: center;
+    letter-spacing: 0.03em;
+}

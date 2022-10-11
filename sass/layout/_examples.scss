@@ -1,0 +1,92 @@
+.filter-buttons {
+    margin: 0 auto;
+    display: flex;
+    column-gap: 8px;
+
+    &__item {
+        background-color: #F5F4FA;
+        color: inherit;
+        font-family: inherit;
+        font-style: normal;
+        @include font(16px, 500, 1.62);
+        text-align: center;
+        letter-spacing: 0.03em;
+        border: none;
+        border-radius: 4px;
+        padding: 6px 22px;
+        min-width: 73px;
+        transition: color var(--dur-and-func),
+        background-color var(--dur-and-func),
+        box-shadow var(--dur-and-func);
+
+            &:active,
+            &:hover,
+            &:focus {
+                background-color: var(--brand-color);
+                color: var(--white-color);
+                cursor: pointer;
+                box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+            }
+    }
+}
+
+
+
+.examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-top: 50px;
+
+    &-container {
+            padding-top: 94px;
+            padding-bottom: 94px;
+            background-color: var(--white-color);
+            display: flex;
+            flex-direction: column;
+        }
+    &__item {
+    transition: box-shadow var(--dur-and-func);
+
+        &:hover,
+        &:focus {
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+        }
+    }
+    &__picture-box {
+        position: relative;
+        width: 370px;
+        height: 294px;
+        overflow: hidden;
+    }
+    &__tex-over-img {
+        @include font(18px, 400, 1.56);
+        letter-spacing: 0.03em;
+        color: #FFFFFF;
+        background-color: var(--brand-color);
+        padding: 63px 24px;
+        opacity: 0.9;
+        width: 370px;
+        height: 294px;
+        position: relative;
+        transition: transform var(--dur-and-func);
+
+        .examples__item:hover & {
+            transform: translate(0, -100%);
+        }
+    }
+    &__caption {
+        @include font(18px, 700, 2);
+        letter-spacing: 0.06em;
+        &-box {
+                padding: 20px 24px;
+                background: #FFFFFF;
+                border: 1px solid #EEEEEE;
+                border-top: none;
+            }
+    }
+    &__details {
+        @include font(16px, 400, 1.88);
+        color: var(--grey-text-color);
+    }
+}
